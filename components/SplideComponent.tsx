@@ -8,6 +8,7 @@ import "@splidejs/splide/dist/css/splide.min.css";
 import styles from "../styles/Splide.module.css";
 
 export default function SplideComponent() {
+    const isClient = typeof window !== "undefined";
     useEffect(() => {
         const splide = new Splide(".splide", {
             // Splide.js options here
@@ -19,6 +20,8 @@ export default function SplideComponent() {
             splide.destroy(); // Clean up Splide on unmount
         };
     }, []);
+
+    if (!isClient) return null;
 
     // size 9/16
     const width = window.innerWidth;
