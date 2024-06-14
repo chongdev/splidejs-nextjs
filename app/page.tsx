@@ -1,13 +1,7 @@
 import SplideComponent from "@/components/SplideComponent";
 
 const HomePage = () => {
-    const isClient = typeof window !== "undefined";
-
-    return (
-        <div>
-            <SplideComponent />
-        </div>
-    );
+    return <SplideComponent />;
 };
 
 export default HomePage;
